@@ -768,7 +768,7 @@ const state = {
   wakeRecognition: null,
   voiceRecognition: null,
   synth: window.speechSynthesis,
-  apiKey: '',
+  apiKey: 'AQ.Ab8RN6Imd__UJGP35FQ2XiNCf8XdsV1USRHjCcqA4-VGkPqzmA',
   currentConvId: null,
   isTyping: false,
 };
@@ -783,10 +783,10 @@ function init() {
   }
   applySettingToggles();
   // Load saved API key
-  const savedKey = localStorage.getItem('synex_api_key') || '';
-  if (savedKey) {
-    state.apiKey = savedKey;
-    document.getElementById('api-key-input').value = savedKey;
+//  const savedKey = localStorage.getItem('synex_api_key') || '';
+ // if (savedKey) {
+   // state.apiKey = savedKey;
+   // document.getElementById('api-key-input').value = savedKey;
   }
   document.getElementById('api-key-input').addEventListener('change', (e) => {
     state.apiKey = e.target.value.trim();
