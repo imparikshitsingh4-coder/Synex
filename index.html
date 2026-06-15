@@ -782,11 +782,11 @@ function init() {
     setTimeout(startWakeWord, 1000);
   }
   applySettingToggles();
-  // Load saved API key
-//  const savedKey = localStorage.getItem('synex_api_key') || '';
- // if (savedKey) {
-   // state.apiKey = savedKey;
-   // document.getElementById('api-key-input').value = savedKey;
+   Load saved API key
+  const savedKey = localStorage.getItem('synex_api_key') || '';
+  if (savedKey) {
+    state.apiKey = savedKey;
+   document.getElementById('api-key-input').value = savedKey;
   }
   document.getElementById('api-key-input').addEventListener('change', (e) => {
     state.apiKey = e.target.value.trim();
