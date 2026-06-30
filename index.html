@@ -598,127 +598,151 @@ function setupCoreActionBindings() {
     
     setupToggleAction('tt');
     setupToggleAction('tw');
-    setupToggleAction('tr');
+  var LOGO="data:image/jpeg;base64,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";
+var G={msgs:[],hist:[],cfg:{},atts:[],mode:"chat",think:false,wakeOn:false,wakeRec:null,voiceRec:null,synth:window.speechSynthesis,convId:null,busy:false,userName:""};
 
-    document.getElementById('sideback').addEventListener('click', () => {
-        document.getElementById('sidebar').classList.toggle('open');
-    });
+function setLogos(){document.querySelectorAll("img").forEach(function(el){if(LOGO&&(!el.src||el.src.indexOf("data:")<0))el.src=LOGO;});}
 
-    document.getElementById('vbtn').addEventListener('click', () => togglePanelDisplay('vov', true));
-    document.getElementById('vend').addEventListener('click', () => togglePanelDisplay('vov', false));
-
-    document.querySelectorAll('.mp').forEach(pill => {
-        pill.addEventListener('click', (e) => {
-            document.querySelectorAll('.mp').forEach(p => p.classList.remove('on'));
-            pill.classList.add('on');
-            activeFilter = pill.id.replace('p', '');
-            filterHistoryItemsDisplay();
-        });
-    });
-    
-    document.getElementById('gbx').addEventListener('click', () => {
-        document.getElementById('gb').classList.remove('show');
-        document.getElementById('app').classList.remove('baron');
-    });
-
-    document.getElementById('clrhist').addEventListener('click', () => {
-        if(confirm("Are you sure you want to clear your chat history?")) {
-            localStorage.clear();
-            chatHistory = [];
-            renderSidebarHistoryTree();
-            addNewChatSession();
-            displaySystemToast("System History Purged");
-            togglePanelDisplay('setpnl', false);
-        }
-    });
-
-    // RequestAnimationFrame Optimized Scroll
-    const chatArea = document.getElementById("ca");
-    let lastScrollTop = 0;
-    let isTicking = false;
-    
-    chatArea.addEventListener("scroll", function() {
-        if (!isTicking) {
-            window.requestAnimationFrame(() => {
-                let st = chatArea.scrollTop;
-                if (st < lastScrollTop && lastScrollTop - st > 20 && st > 50) {
-                    document.body.classList.add("focus-mode");
-                } else if (st > lastScrollTop || st < 20) {
-                    document.body.classList.remove("focus-mode");
-                }
-                lastScrollTop = st <= 0 ? 0 : st;
-                isTicking = false;
-            });
-            isTicking = true;
-        }
-    });
-
-    chatArea.addEventListener("click", function() {
-        document.body.classList.remove("focus-mode");
-    });
+function greet(name){
+  var h=new Date().getHours();
+  var t=h<5?"Good night":h<12?"Good morning":h<17?"Good afternoon":h<21?"Good evening":"Good night";
+  return t+(name?", "+name:"")+"! \uD83D\uDC4B";
 }
 
-const persDropdown = document.getElementById("pers");
-if (persDropdown) {
-    persDropdown.addEventListener("change", function() {
-        const selectedValue = persDropdown.value;
-        document.body.classList.remove("theme-coder", "theme-writer");
-        if (selectedValue === "coder") {
-            document.body.classList.add("theme-coder");
-        } else if (selectedValue === "writer") {
-            document.body.classList.add("theme-writer");
+function doSave(){
+  var n=document.getElementById("gsinp").value.trim();
+  if(!n){var f=document.getElementById("gsinp");f.style.boxShadow="0 0 0 2px #ef4444";setTimeout(function(){f.style.boxShadow="";},1000);return;}
+  G.userName=n;try{localStorage.setItem("sx_u",n);}catch(e){}
+  var gs=document.getElementById("gs");gs.classList.add("out");setTimeout(function(){gs.style.display="none";},500);
+  showBar(n);bootApp();
+}
+
+function showBar(name){
+  var bar=document.getElementById("gb");
+  var g=greet(name);
+  document.getElementById("gbtxt").innerHTML=g+" Welcome to <b style='background:linear-gradient(135deg,#6366f1,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text'>My Synex</b>. How can I help?";
+  document.getElementById("app").classList.add("baron");
+  setTimeout(function(){bar.classList.add("show");},80);
+  setTimeout(hideBar,7000);
+}
+function hideBar(){document.getElementById("gb").classList.remove("show");setTimeout(function(){document.getElementById("app").classList.remove("baron");},400);}
+function changeName(){closePanel("setpnl");try{localStorage.removeItem("sx_u");}catch(e){}var gs=document.getElementById("gs");gs.style.display="";gs.classList.remove("out");document.getElementById("gsinp").value=G.userName||"";}
+
+function bootApp(){
+  try{G.hist=JSON.parse(localStorage.getItem("sx_h")||"[]");}catch(e){G.hist=[];}
+  try{G.cfg=JSON.parse(localStorage.getItem("sx_c")||"{}");}catch(e){G.cfg={};}
+  renderHist();applyToggles();
+  document.getElementById("uname").textContent=G.userName||"User";
+  var eg=document.getElementById("egreet");if(eg)eg.textContent=greet(G.userName);
+  if(G.cfg.wakeWord!==false)setTimeout(startWake,1500);
+}
+function applyToggles(){setT("tt",G.cfg.deepThink===true);setT("tw",G.cfg.wakeWord!==false);setT("tr",G.cfg.autoRead===true);G.think=G.cfg.deepThink===true;updThk();}
+function setT(id,on){var el=document.getElementById(id);if(!el)return;if(on)el.classList.add("on");else el.classList.remove("on");}
+function togSet(el,key){el.classList.toggle("on");var on=el.classList.contains("on");G.cfg[key]=on;saveC();if(key==="wakeWord"){if(on)startWake();else stopWake();}if(key==="deepThink"){G.think=on;updThk();}showToast(on?"On: "+key:"Off: "+key);}
+function saveC(){try{localStorage.setItem("sx_c",JSON.stringify(G.cfg));}catch(e){}}
+
+function startWake(){
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR)return;
+  try{G.wakeRec=new SR();G.wakeRec.continuous=true;G.wakeRec.interimResults=true;G.wakeRec.lang="en-US";
+    G.wakeRec.onresult=function(e){var t=Array.from(e.results).map(function(r){return r[0].transcript;}).join("").toLowerCase();if(t.indexOf("hey synex")>=0||t.indexOf("hi synex")>=0){G.wakeRec.stop();setTimeout(startVoice,400);}};
+    G.wakeRec.onend=function(){if(G.cfg.wakeWord!==false&&!document.getElementById("vov").classList.contains("on"))setTimeout(function(){try{G.wakeRec.start();}catch(e){}},500);};
+    G.wakeRec.start();G.wakeOn=true;document.getElementById("wake").classList.add("on");document.getElementById("wakelbl").textContent="Listening...";
+  }catch(e){}
+}
+function stopWake(){if(G.wakeRec)try{G.wakeRec.stop();}catch(e){}G.wakeOn=false;document.getElementById("wake").classList.remove("on");document.getElementById("wakelbl").textContent="Hey Synex";}
+function startVoice(){
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){showToast("Voice not supported in this browser");return;}
+  stopWake();document.getElementById("vov").classList.add("on");document.getElementById("vst").textContent="Listening...";document.getElementById("vtr").textContent="";
+  try{G.voiceRec=new SR();G.voiceRec.continuous=false;G.voiceRec.interimResults=true;G.voiceRec.lang="en-US";
+    G.voiceRec.onresult=function(e){document.getElementById("vtr").textContent=Array.from(e.results).map(function(r){return r[0].transcript;}).join("");};
+    G.voiceRec.onend=function(){var t=document.getElementById("vtr").textContent.trim();if(t){closeVoice();document.getElementById("msgin").value=t;setTimeout(sendMsg,300);}else document.getElementById("vst").textContent="Nothing heard - tap End";};
+    G.voiceRec.onerror=function(){document.getElementById("vst").textContent="Error - try again";setTimeout(closeVoice,2000);};
+    G.voiceRec.start();
+  }catch(e){closeVoice();}
+}
+function closeVoice(){document.getElementById("vov").classList.remove("on");if(G.voiceRec)try{G.voiceRec.stop();}catch(e){}if(G.cfg.wakeWord!==false)setTimeout(startWake,800);}
+var vmuted=false;
+function togMute(){vmuted=!vmuted;try{if(vmuted)G.voiceRec.stop();else G.voiceRec.start();}catch(e){}document.getElementById("vst").textContent=vmuted?"Muted":"Listening...";}
+function speak(text){if(!G.synth||G.cfg.autoRead!==true)return;G.synth.cancel();var u=new SpeechSynthesisUtterance(text.replace(/[#*`_]/g,"").slice(0,500));u.rate=1;G.synth.speak(u);}
+
+function updThk(){var b=document.getElementById("thkbtn");if(G.think){b.classList.add("act");b.textContent="Thinking ON";}else{b.classList.remove("act");b.textContent="\u{1F9E0} Think";}}
+function autoR(el){el.style.height="auto";el.style.height=Math.min(el.scrollHeight,140)+"px";}
+function updCC(){var n=document.getElementById("msgin").value.length;document.getElementById("ccnt").textContent=n>0?n+" chars":"";}
+function clearInp(){var i=document.getElementById("msgin");i.value="";i.style.height="auto";G.atts=[];document.getElementById("fp").innerHTML="";updCC();}
+function qp(t){var i=document.getElementById("msgin");i.value=t;i.focus();autoR(i);}
+function qs(t){document.getElementById("msgin").value=t;sendMsg();}
+function insTpl(){var t=["Write a professional email to [Name] about [Topic].","Explain [concept] simply for a beginner.","Write a Python script that [does what].","Summarize:\n\n[paste text here]","Translate to [language]: [your text]","Create a step-by-step plan for [goal].","Debug this code:\n\n[paste code]"];qp(t[Math.floor(Math.random()*t.length)]);}
+function handleFiles(inp){Array.from(inp.files).forEach(function(f){G.atts.push(f);var a=document.getElementById("fp");var c=document.createElement("div");c.className="fchip";var ic=f.type.indexOf("image")>=0?"\uD83D\uDDBC\uFE0F":f.type.indexOf("pdf")>=0?"\uD83D\uDCC4":"\uD83D\uDCCE";c.innerHTML=ic+" "+(f.name.length>22?f.name.slice(0,22)+"...":f.name)+' <span class="frm" onclick="this.parentElement.remove()">\u00D7</span>';a.appendChild(c);});inp.value="";}
+
+// ==========================================
+// 🎨 STEP 1 & STEP 2: CANVAS ENGINE INIT & HOOKS
+// ==========================================
+// Move artifacts engine setup above sendMsg so it is ready
+function checkForCodeArtifacts(rawAiText) {
+    if (!rawAiText || !rawAiText.includes("```html")) return;
+    var htmlBlockRegex = /```html([\s\S]*?)```/i;
+    var match = rawAiText.match(htmlBlockRegex);
+    
+    if (match && match[1]) {
+        var extractCode = match[1].trim();
+        var canvasPanel = document.getElementById("synexCanvas");
+        var chatWindow = document.getElementById("ca");
+        var iframe = document.getElementById("canvasSandbox");
+        
+        if (canvasPanel && iframe) {
+            canvasPanel.style.display = "flex";
+            if (chatWindow && window.innerWidth > 768) {
+                chatWindow.style.width = "50%";
+            } else if (chatWindow) {
+                chatWindow.classList.add("split-active-layout");
+            }
+            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(extractCode);
+            iframeDoc.close();
         }
-    });
-}
-
-function commitUserIdentityName() {
-    const inputVal = document.getElementById('gsinp').value.trim();
-    if(!inputVal) return;
-    userIdentityName = inputVal;
-    localStorage.setItem('synex_user_profile', userIdentityName);
-    
-    document.getElementById('gs').classList.add('out');
-    document.getElementById('unamedisp').innerText = userIdentityName;
-    document.getElementById('egreet_title').innerText = `Hello, ${userIdentityName}`;
-    
-    setTimeout(() => {
-        document.getElementById('gbtxt').innerHTML = `Welcome back, <strong>${userIdentityName}</strong>. Ready to optimize layout processing arrays.`;
-        document.getElementById('gb').classList.add('show');
-        document.getElementById('app').classList.add('baron');
-    }, 800);
-}
-
-function loadStoredProfileData() {
-    const cachedName = localStorage.getItem('synex_user_profile');
-    if(cachedName) {
-        userIdentityName = cachedName;
-        document.getElementById('gs').style.display = 'none';
-        document.getElementById('unamedisp').innerText = userIdentityName;
-        document.getElementById('egreet_title').innerText = `Hello, ${userIdentityName}`;
     }
-    
-    const logs = localStorage.getItem('synex_chat_logs');
-    if(logs) {
-        chatHistory = JSON.parse(logs);
-        renderSidebarHistoryTree();
+}
+
+function closeCanvas() {
+    var canvasPanel = document.getElementById("synexCanvas");
+    var chatWindow = document.getElementById("ca");
+    if (canvasPanel) canvasPanel.style.display = "none";
+    if (chatWindow) {
+        chatWindow.style.width = "100%";
+        chatWindow.classList.remove("split-active-layout");
     }
 }
 
-function togglePanelDisplay(targetId, forceShow) {
-    const target = document.getElementById(targetId);
-    if(forceShow) target.classList.add('on');
-    else target.classList.remove('on');
+async function sendMsg(){
+  var inp=document.getElementById("msgin");var text=inp.value.trim();if(!text||G.busy)return;
+  hideEmpty();showSC();
+  addMsg("user",esc(text).replace(/\n/g,"<br>"),text);
+  G.msgs.push({role:"user",content:text});clearInp();
+  var title=text.slice(0,40);if(!G.convId)startConv(title);
+  var tid=showTyping();G.busy=true;
+  try{
+    var reply=await callGroq();
+    removeTyping(tid);
+    addMsg("ai",fmt(reply),reply);
+    G.msgs.push({role:"assistant",content:reply});
+    saveConv(title);
+    
+    // ==========================================
+    // 🪝 STEP 2B: TRIGGER ARTIFACTS HOOK
+    // ==========================================
+    checkForCodeArtifacts(reply);
+    
+  }catch(err){removeTyping(tid);addMsg("ai","\u26A0\uFE0F "+err.message,err.message);}
+  G.busy=false;
 }
+// ==========================================
+// END OF INTEGRATION BLOCK
+// ==========================================
 
-function setupToggleAction(elementId) {
-    const element = document.getElementById(elementId);
-    element.addEventListener('click', () => {
-        element.classList.toggle('on');
-    });
-}
-
-function addNewChatSession() {
-    currentSessionId = Date.now();
+var GU="[https://api.groq.com/openai/v1/chat/completions](https://api.groq.com/openai/v1/chat/completions)";
+    
+    
     const chatWorkspace = document.getElementById('ca');
     chatWorkspace.innerHTML = `
       <div id="empty">
