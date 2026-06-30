@@ -70,8 +70,7 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--font);overflow:hidden}
-
-/* AMBIENT */
+  /* AMBIENT */
 #ambient{position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
     radial-gradient(ellipse 60% 40% at 10% 0%,rgba(99,102,241,0.05) 0%,transparent 60%),
@@ -180,8 +179,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .wdot{width:5px;height:5px;border-radius:50%;background:var(--text3);flex-shrink:0}
 #wake.on .wdot{background:#34d399;animation:blink 1s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-
-/* CHAT */
+  /* CHAT */
 #ca{flex:1;overflow-y:auto;padding:20px 0;display:flex;flex-direction:column}
 #ca::-webkit-scrollbar{width:3px}
 #ca::-webkit-scrollbar-thumb{background:var(--bg5);border-radius:3px}
@@ -200,7 +198,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .cap:hover{border-color:rgba(120,120,255,0.25);transform:translateY(-2px)}
 .cic{font-size:18px;margin-bottom:5px;position:relative;z-index:1}
 .ct{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px;position:relative;z-index:1}
-.cd{font-size:11px;color:var(--text2);line-height:1.4;position:relative;z-index:1}
+.cd覆{font-size:11px;color:var(--text2);line-height:1.4;position:relative;z-index:1}
 
 /* MESSAGES */
 .mw{padding:5px 18px;max-width:800px;margin:0 auto;width:100%}
@@ -268,7 +266,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .pcl:hover{border-color:rgba(239,68,68,0.4);color:#f87171}
 .sr{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);gap:12px}
 .sr:last-child{border-bottom:none}
-.sl{font-size:13px;font-weight:500}
+.sl Im{font-size:13px;font-weight:500}
 .sd{font-size:11px;color:var(--text2);margin-top:2px}
 .tog{width:38px;height:21px;border-radius:11px;background:var(--bg5);border:1px solid var(--border);position:relative;cursor:pointer;transition:all .3s;flex-shrink:0}
 .tog.on{border-color:rgba(99,102,241,0.4);background:linear-gradient(135deg,#6366f1,#8b5cf6)}
@@ -279,7 +277,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--f
 .ebtn{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:11px 14px;color:var(--text);font-family:var(--font);font-size:13px;cursor:pointer;display:flex;align-items:center;gap:9px;transition:all .2s;margin-bottom:7px;text-align:left}
 .ebtn:hover{border-color:rgba(99,102,241,0.3);background:var(--bg4)}
 
-schips{display:flex;gap:6px;padding:0 18px 9px;flex-wrap:wrap;max-width:800px;margin:0 auto;width:100%}
+.schips{display:flex;gap:6px;padding:0 18px 9px;flex-wrap:wrap;max-width:800px;margin:0 auto;width:100%}
 .sc{font-size:12px;padding:5px 11px;border-radius:20px;cursor:pointer;border:1px solid var(--border);color:var(--text2);background:var(--bg3);font-family:var(--font);transition:all .2s;white-space:nowrap}
 .sc:hover{border-color:rgba(99,102,241,0.3);color:#a5b4fc;background:rgba(99,102,241,0.08)}
 
@@ -300,9 +298,8 @@ schips{display:flex;gap:6px;padding:0 18px 9px;flex-wrap:wrap;max-width:800px;ma
   #wake{bottom:74px;right:10px}
   .tbtit{font-size:12px}
 }
-  /* --- Premium UI Polish Extensions --- */
 
-/* 1. Smooth, floating slide-up animation for new chat messages */
+/* --- Premium UI Polish Extensions --- */
 .message, [class*="message"] {
   animation: floatIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
@@ -319,17 +316,15 @@ schips{display:flex;gap:6px;padding:0 18px 9px;flex-wrap:wrap;max-width:800px;ma
   }
 }
 
-/* 2. Premium glowing active state for the chat input box */
 input, textarea, [contenteditable="true"] {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 input:focus, textarea:focus, [contenteditable="true"]:focus {
-  border-color: #ec4899 !important; /* Matches your theme's pink/accent color */
+  border-color: #ec4899 !important;
   box-shadow: 0 0 15px rgba(236, 72, 153, 0.25), inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
   transform: translateY(-1px);
 }
 
-/* 3. Smooth hover effects for buttons (Send, Gear, Trash, etc.) */
 button, [role="button"] {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
@@ -343,12 +338,10 @@ button:active, [role="button"]:active {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* 4. Fluid streaming scroll container */
 div, section, main {
   scroll-behavior: smooth !important;
 }
 
-/* Custom premium scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -364,7 +357,8 @@ div, section, main {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(156, 163, 175, 0.6);
 }
-  /* --- HOUDINI FOCUS MODE STYLES --- */
+
+/* --- HOUDINI FOCUS MODE STYLES --- */
 .tbtit, .right-icons, .msgin-container, .settings-btn, #schips {
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
@@ -382,13 +376,13 @@ body.focus-mode #schips {
     opacity: 0 !important;
     transform: translateY(10px);
     pointer-events: none;
-}
+         }
+
   /* --- DYNAMIC IDENTITY CORE THEMES --- */
 #msgin, .msgin-container, .tbtit span {
     transition: border-color 0.4s ease, box-shadow 0.4s ease, color 0.4s ease, background 0.4s ease;
 }
 
-/* Code Master Theme Accent */
 body.theme-coder .msgin-container {
     border-color: rgba(34, 197, 94, 0.4) !important;
     box-shadow: 0 0 15px rgba(34, 197, 94, 0.1) !important;
@@ -399,7 +393,6 @@ body.theme-coder .tbtit span {
     color: #4ade80 !important;
 }
 
-/* Creative Writer Theme Accent */
 body.theme-writer .msgin-container {
     border-color: rgba(249, 115, 22, 0.4) !important;
     box-shadow: 0 0 15px rgba(249, 115, 22, 0.1) !important;
@@ -549,16 +542,13 @@ body.theme-writer .tbtit span {
 <div id="toast"></div>
 
 <script>
-  // Base Configuration Constants & State Handles
 let chatHistory = [];
 let currentSessionId = Date.now();
 let activeFilter = 'all';
 let userIdentityName = "Explorer";
 
-// Premium Brand Image Assets Array
 const AVATAR_URL = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=120&q=80";
 
-// Handle Application Setup & DOM Loading Initializations
 window.addEventListener('DOMContentLoaded', () => {
     initBrandAssets();
     setupCoreActionBindings();
@@ -566,7 +556,6 @@ window.addEventListener('DOMContentLoaded', () => {
     addNewChatSession();
 });
 
-// Seed visuals dynamically into image components
 function initBrandAssets() {
     const targets = ['gl1', 'gl2', 'gl3', 'gl4', 'gl5', 'gl6'];
     targets.forEach(id => {
@@ -575,14 +564,11 @@ function initBrandAssets() {
     });
 }
 
-// Bind events to interactive elements, layouts, toggles, controls
 function setupCoreActionBindings() {
-    // Primary CTA buttons
     document.getElementById('gsbtn').addEventListener('click', commitUserIdentityName);
     document.getElementById('sbtn').addEventListener('click', triggerMessageSubmission);
     document.getElementById('newbtn').addEventListener('click', addNewChatSession);
     
-    // Setup message text area sizing properties dynamically
     const textConsole = document.getElementById('msgin');
     textConsole.addEventListener('input', function() {
         this.style.height = 'auto';
@@ -597,7 +583,6 @@ function setupCoreActionBindings() {
         }
     });
 
-    // Suggestion panel template cards binding loops
     document.querySelectorAll('.cap, .sc').forEach(item => {
         item.addEventListener('click', () => {
             const promptText = item.getAttribute('data-p');
@@ -608,25 +593,20 @@ function setupCoreActionBindings() {
         });
     });
 
-    // Panel controls layout handlers
     document.getElementById('sbtn_top').addEventListener('click', () => togglePanelDisplay('setpnl', true));
     document.getElementById('setcl').addEventListener('click', () => togglePanelDisplay('setpnl', false));
     
-    // Toggle switches bindings
     setupToggleAction('tt');
     setupToggleAction('tw');
     setupToggleAction('tr');
 
-    // Sidebar overlay toggle navigation rules for low-resolution devices
     document.getElementById('sideback').addEventListener('click', () => {
         document.getElementById('sidebar').classList.toggle('open');
     });
 
-    // Voice panel controls layer
     document.getElementById('vbtn').addEventListener('click', () => togglePanelDisplay('vov', true));
     document.getElementById('vend').addEventListener('click', () => togglePanelDisplay('vov', false));
 
-    // Category pills selection matrix
     document.querySelectorAll('.mp').forEach(pill => {
         pill.addEventListener('click', (e) => {
             document.querySelectorAll('.mp').forEach(p => p.classList.remove('on'));
@@ -636,15 +616,13 @@ function setupCoreActionBindings() {
         });
     });
     
-    // Core engine layout banner closing
     document.getElementById('gbx').addEventListener('click', () => {
         document.getElementById('gb').classList.remove('show');
         document.getElementById('app').classList.remove('baron');
     });
 
-    // Setup clear storage feature logic
     document.getElementById('clrhist').addEventListener('click', () => {
-        if(confirm("Are you absolute sure you want to scrub all cached prompt layouts?")) {
+        if(confirm("Are you sure you want to clear your chat history?")) {
             localStorage.clear();
             chatHistory = [];
             renderSidebarHistoryTree();
@@ -654,7 +632,7 @@ function setupCoreActionBindings() {
         }
     });
 
-    // FIXED: Throttled scroll layout for auto-focus mode toggling via RequestAnimationFrame
+    // RequestAnimationFrame Optimized Scroll
     const chatArea = document.getElementById("ca");
     let lastScrollTop = 0;
     let isTicking = false;
@@ -663,7 +641,6 @@ function setupCoreActionBindings() {
         if (!isTicking) {
             window.requestAnimationFrame(() => {
                 let st = chatArea.scrollTop;
-                
                 if (st < lastScrollTop && lastScrollTop - st > 20 && st > 50) {
                     document.body.classList.add("focus-mode");
                 } else if (st > lastScrollTop || st < 20) {
@@ -676,28 +653,24 @@ function setupCoreActionBindings() {
         }
     });
 
-    // Tap anywhere on the chat area to instantly bring the UI back
     chatArea.addEventListener("click", function() {
         document.body.classList.remove("focus-mode");
     });
 }
 
-// DYNAMIC IDENTITY CORE ENGINE
 const persDropdown = document.getElementById("pers");
 if (persDropdown) {
     persDropdown.addEventListener("change", function() {
         const selectedValue = persDropdown.value;
         document.body.classList.remove("theme-coder", "theme-writer");
-        
-        if (selectedValue === "coder" || selectedValue === "code") {
+        if (selectedValue === "coder") {
             document.body.classList.add("theme-coder");
-        } else if (selectedValue === "writer" || selectedValue === "creative") {
+        } else if (selectedValue === "writer") {
             document.body.classList.add("theme-writer");
         }
     });
 }
 
-// Persist user profile name
 function commitUserIdentityName() {
     const inputVal = document.getElementById('gsinp').value.trim();
     if(!inputVal) return;
@@ -715,7 +688,6 @@ function commitUserIdentityName() {
     }, 800);
 }
 
-// Load cached configuration arrays
 function loadStoredProfileData() {
     const cachedName = localStorage.getItem('synex_user_profile');
     if(cachedName) {
@@ -745,7 +717,6 @@ function setupToggleAction(elementId) {
     });
 }
 
-// Scaffold clear slate for newly requested workspace interactions
 function addNewChatSession() {
     currentSessionId = Date.now();
     const chatWorkspace = document.getElementById('ca');
@@ -779,12 +750,10 @@ function addNewChatSession() {
             targetGrid.appendChild(div);
         });
     }
-    
     document.getElementById('sidebar').classList.remove('open');
-}
+  }
 
-// Master execution pipe
-function triggerMessageSubmission() {
+  function triggerMessageSubmission() {
     const textInput = document.getElementById('msgin');
     const promptValue = textInput.value.trim();
     if(!promptValue) return;
@@ -831,7 +800,6 @@ function appendChatMessageNode(text, sender) {
             </div>
           </div>`;
     }
-    
     consoleContainer.appendChild(wrapper);
     consoleContainer.scrollTop = consoleContainer.scrollHeight;
 }
@@ -873,7 +841,6 @@ function parseTextFormattingMarkup(inputRaw) {
 
 function savePromptToHistoryMetadata(prompt) {
     const historicalTitle = prompt.length > 28 ? prompt.substring(0, 26) + '...' : prompt;
-    
     let computedTag = 'all';
     if(prompt.toLowerCase().includes('code') || prompt.toLowerCase().includes('css') || prompt.toLowerCase().includes('script')) {
         computedTag = 'code';
@@ -892,7 +859,6 @@ function savePromptToHistoryMetadata(prompt) {
             logs: [prompt]
         });
     }
-    
     localStorage.setItem('synex_chat_logs', JSON.stringify(chatHistory));
     renderSidebarHistoryTree();
 }
@@ -944,15 +910,12 @@ function loadHistoricalChatSession(targetSessionId) {
 
 function synthesizeMockResponsePayload(userPrompt) {
     const normalizedInput = userPrompt.toLowerCase();
-    
     if(normalizedInput.includes('layout') || normalizedInput.includes('css') || normalizedInput.includes('design')) {
         return `Here is a custom structural blueprint generated for your premium interface layer request:\n\n\`\`\`css\n/* Premium Floating Card Grid Layout Rules */\n.dashboard-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 20px;\n  padding: 16px;\n}\n\n.premium-card {\n  background: rgba(255, 255, 255, 0.03);\n  border: 1px solid rgba(255, 255, 255, 0.08);\n  border-radius: 14px;\n  backdrop-filter: blur(12px);\n  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);\n}\n\n.premium-card:hover {\n  transform: translateY(-4px);\n  border-color: rgba(99, 102, 241, 0.3);\n}\n\`\`\`\n\nThis responsive matrix leverages modern hardware acceleration loops via high performance backdrop-filter layers. Let me know if you need any adjustments to colors or styles!`;
     }
-    
     if(normalizedInput.includes('code') || normalizedInput.includes('secure') || normalizedInput.includes('javascript')) {
-        return `Understood. Processing structural logic refactoring protocols. Here is a secure optimization script to parse parameters reliably:\n\n\`\`\`javascript\n// Secure verification pipe engine handling optimization loops\nfunction structuralVerifyPipeline(requestPayload, operationalToken) {\n    const cryptoEngine = require('crypto');\n    if (!operationalToken || operationalToken.length < 32) {\n        throw new Error("Operational validation security parity check failure");\n    }\n    \n    const digestSignature = cryptoEngine.createHmac('sha256', operationalToken)\n        .update(JSON.stringify(requestPayload))\n        .digest('hex');\n        \n    return Object.freeze({\n        verifiedStamp: Date.now(),\n        signatureHash: digestSignature\n    });\n}\n\`\`\`\n\nThis design block uses immutable object freezing structures to maximize core engine execution isolation safety boundaries.`;
+        return `Understood. Processing structural logic refactoring protocols. Here is a secure optimization script to parse parameters reliably:\n\n\`\`\`javascript\n// Secure verification pipe engine handling optimization loops\nfunction structuralVerifyPipeline(requestPayload, operationalToken) {\n    const cryptoEngine = require('crypto');\n    if (!operationalToken || operationalToken.length < 32) {\n        throw new Error("Operational validation security parity check failure");\n    }\n    const digestSignature = cryptoEngine.createHmac('sha256', operationalToken)\n        .update(JSON.stringify(requestPayload))\n        .digest('hex');\n    return Object.freeze({\n        verifiedStamp: Date.now(),\n        signatureHash: digestSignature\n    });\n}\n\`\`\`\n\nThis design block uses immutable object freezing structures to maximize core engine execution isolation safety boundaries.`;
     }
-    
     return `I have fully analyzed your conceptual query regarding "**${userPrompt}**". \n\nHere are the strategic implementation steps recommended to handle this roadmap:\n\n1. **Core Strategy Framework**: Isolate validation vectors before deploying data models onto standard layouts or active processing matrices.\n2. **Structural Execution**: Modularize logic arrays to decouple data processing schemas from active UI modules.\n3. **Parity Check Loop**: Run regular verification audits across computing endpoints to maintain security and rendering balance.\n\nLet me know how you would like to proceed with this configuration roadmap!`;
 }
 
@@ -964,8 +927,10 @@ function displaySystemToast(messageText) {
         alertBox.classList.remove('on');
     }, 2800);
 }
-              
 </script>
 </body>
 </html>
-        
+  
+  
+       
+  
